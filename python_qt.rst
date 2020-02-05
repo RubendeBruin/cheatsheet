@@ -5,6 +5,10 @@ events ::
 
    table.itemChanged.connect(self.node_table_cell_edit_done)
    table.itemSelectionChanged.connect(self.selection_changed)
+   
+   table.currentRow()    
+   table.currentColumn()  --> to give the cell that was changed
+   
 
 filling cells ::
     
