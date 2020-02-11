@@ -31,3 +31,17 @@ column size ::
    table.resizeColumnsToContents()
    table.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch) # does not work with dropdown box
         
+Dialogs
+=========
+
+Init ::
+
+   self.MainWindow = QtWidgets.QDialog()
+   self.ui = Ui_DefaultMotionDialog()
+   self.ui.setupUi(self.MainWindow)
+
+Open/Close::
+
+   self.MainWindow.exec_()
+
+   self.MainWindow.close()
