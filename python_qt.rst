@@ -45,3 +45,14 @@ Open/Close::
    self.MainWindow.exec_()
 
    self.MainWindow.close()
+   
+VTK renderer and interactor shutdown
+=======================================
+ 
+ shutdown::
+    renwin.Finalize()
+    iren.TerminateApp()
+    
+    if needed:
+    ren = self.vtkWidget.GetRenderWindow()
+    iren = ren.GetInteractor()
