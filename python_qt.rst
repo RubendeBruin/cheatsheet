@@ -30,7 +30,15 @@ column size ::
 
    table.resizeColumnsToContents()
    table.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch) # does not work with dropdown box
-        
+
+Widgets events
+===============
+
+drop-down box (combobox)::
+
+   combobox.currentIndexChanged.connect(self.action)
+
+
 Dialogs
 =========
 
@@ -45,7 +53,8 @@ Open/Close::
    self.MainWindow.exec_()
 
    self.MainWindow.close()
-   
+
+
 VTK renderer and interactor shutdown
 =======================================
  
