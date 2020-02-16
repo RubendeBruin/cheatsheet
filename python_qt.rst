@@ -58,7 +58,8 @@ Open/Close::
 VTK renderer and interactor shutdown
 =======================================
  
- shutdown::
+shutdown::
+
     renwin.Finalize()
     iren.TerminateApp()
     
