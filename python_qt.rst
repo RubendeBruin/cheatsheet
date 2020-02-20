@@ -58,11 +58,11 @@ Open/Close::
 Applications
 ==============
 
-app = QApplication.instance()  # already existing instance
+   app = QApplication.instance()  # already existing instance
 
 or create one:
 
-app = QtWidgets.QApplication()
+   app = QtWidgets.QApplication()
 
 VTK renderer and interactor shutdown
 =======================================
