@@ -55,6 +55,15 @@ Open/Close::
    self.MainWindow.close()
 
 
+Applications
+==============
+
+app = QApplication.instance()  # already existing instance
+
+or create one:
+
+app = QtWidgets.QApplication()
+
 VTK renderer and interactor shutdown
 =======================================
  
