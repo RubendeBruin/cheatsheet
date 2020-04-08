@@ -39,6 +39,34 @@ drop-down box (combobox)::
    combobox.currentIndexChanged.connect(self.action)
 
 
+Tree view (item-based)
+========================
+
+Adding items::
+
+   tree.clear()
+   item = QTreeWidgetItem()
+   item.setText(0,text)     # 0 is the column
+   
+   # add to root
+   self.ui.tree.invisibleRootItem().addChild(item)
+   
+   # add to other item
+   other_item.addChild(item)
+   
+getting items::
+
+   tree.expandAll()
+   
+   self.treeView.selectedItems()[0].text(0)
+
+events::
+
+  tree.activated.connect(self.tree_select_node)  # fires when a user presses [enter]
+  tree.doubleClicked.connect(self.tree_select_node)
+  tree.itemClicked.connect(self.item_clicked)
+
+
 Dialogs
 =========
 
@@ -58,9 +86,13 @@ Open/Close::
 Applications
 ==============
 
+::
+
    app = QApplication.instance()  # already existing instance
 
 or create one:
+
+::
 
    app = QtWidgets.QApplication()
 
