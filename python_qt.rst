@@ -63,6 +63,7 @@ getting items::
 events::
 
   tree.itemActivated.connect # fires when double-clicking an item or pressing enter on a selected item
+      --> called function gets item as argument
   
   tree.activated.connect(self.tree_select_node)  # fires when a user presses [enter]
   tree.doubleClicked.connect(self.tree_select_node)
