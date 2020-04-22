@@ -1,0 +1,16 @@
+Indexing:
+
+element = table.at['a','b']
+
+adding an element
+
+table.at['col','row'] = value
+
+adding a column:
+
+table['new column name'] = 0  # undefined contents
+
+adding a row
+
+frame.loc['row1'] = 0
+
