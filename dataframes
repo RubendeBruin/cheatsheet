@@ -14,3 +14,6 @@ adding a row
 
 frame.loc['row1'] = 0
 
+Adding a summary row
+
+frame.loc['max'] = frame[frame.columns].max()
