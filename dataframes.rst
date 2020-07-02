@@ -19,12 +19,14 @@ Adding a summary row
 frame.loc['max'] = frame[frame.columns].max()
 
 
-# Multiindex
+Multiindex 
+-----------
 
-arrays = [[1, 1, 2, 2], ['red', 'blue', 'red', 'blue']]
-pd.MultiIndex.from_arrays(arrays, names=('number', 'color'))
-MultiIndex([(1,  'red'),
-            (1, 'blue'),
-            (2,  'red'),
-            (2, 'blue')],
-           names=['number', 'color'])
+
+            arrays = [[1, 1, 2, 2], ['red', 'blue', 'red', 'blue']]
+            pd.MultiIndex.from_arrays(arrays, names=('number', 'color'))
+            MultiIndex([(1,  'red'),
+                        (1, 'blue'),
+                        (2,  'red'),
+                        (2, 'blue')],
+                       names=['number', 'color'])
