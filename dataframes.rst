@@ -25,10 +25,12 @@ Multiindex
 .. code-block:: py
 
    arrays = [[1, 1, 2, 2], ['red', 'blue', 'red', 'blue']]
-   pd.MultiIndex.from_arrays(arrays, names=('number', 'color'))
+   index = pd.MultiIndex.from_arrays(arrays, names=('number', 'color'))
    MultiIndex([(1,  'red'),
             (1, 'blue'),
             (2,  'red'),
             (2, 'blue')],
            names=['number', 'color'])
+           
+  data = pd.DataFrame([[1, 2, 3, 4]], columns=index)
 
