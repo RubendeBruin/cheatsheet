@@ -22,3 +22,7 @@ List:
 > text
 
 Inline `code` using backticks
+
+Images:
+
+![Image on github](https://github.com/RubendeBruin/cheatsheet/raw/master/stability2.jpg)
