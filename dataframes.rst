@@ -46,3 +46,9 @@ Selecting
 - ```data.loc['Value level 0', : 'Value level 2']``` . Trailing : my be omitted
 
 
+Filtering on values
+---------------------
+- ```frame = frame[frame['column'] > 20]```
+- ```frame = frame[frame['column'] > 20 & frame['column'] < 40]```
+
+
