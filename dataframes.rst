@@ -22,6 +22,8 @@ frame.loc['max'] = frame[frame.columns].max()
 Multiindex 
 -----------
 
+A MutliIndex has multiple "levels"
+
 .. code-block:: py
 
    arrays = [[1, 1, 2, 2], ['red', 'blue', 'red', 'blue']]
@@ -33,4 +35,14 @@ Multiindex
            names=['number', 'color'])
            
   data = pd.DataFrame([[1, 2, 3, 4]], columns=index)
+
+Selecting
+
+- Names of the levels: index.names
+- Get values in index.get_level_values(0)
+- Get all levels and all values : index.levels
+
+- Select from dataframe using [ ], here : my be used to denote any value. Example
+- ```data.loc['Value level 0', : 'Value level 2']``` . Trailing : my be omitted
+
 
