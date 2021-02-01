@@ -51,4 +51,6 @@ Filtering on values
 - ```frame = frame[frame['column'] > 20]```
 - ```frame = frame[frame['column'] > 20 & frame['column'] < 40]```
 
+- And when a multi-index is used for the column names:``` test[test[('GlobalForce','X')] > 0]```
+
 
