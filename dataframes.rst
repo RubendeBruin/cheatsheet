@@ -44,6 +44,7 @@ Selecting
 
 - Select from dataframe using [ ], here : my be used to denote any value. Example
 - ```data.loc['Value level 0', : 'Value level 2']``` . Trailing : my be omitted
+- ```data.query("color == 'red' and number == 2)```
 
 
 Filtering on values
