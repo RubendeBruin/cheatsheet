@@ -18,6 +18,15 @@ Adding a summary row
 
 frame.loc['max'] = frame[frame.columns].max()
 
+Selecting rows / columns by index
+----------------------------------
+
+.. code-block:: py
+
+    row = frame.iloc[irow]
+    col = frame.iloc[:, icol]
+
+
 
 Multiindex 
 -----------
