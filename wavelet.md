@@ -1,5 +1,11 @@
 Plotting wavelets
 
+$\omega_0 = 5$
+
+$fac = 4 * \pi  / (w + sqrt(2+w^2))$
+
+fac = 1.2325
+
 ```python
 from scipy.signal import cwt, morlet2
 
@@ -19,3 +25,8 @@ def plotwavelet(t, signal, dt, cmap = 'Blues'):
     
     return R
 ```
+
+Calculating the spectral density
+
+```python
+spec = sum(ps.transpose())
