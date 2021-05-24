@@ -1,3 +1,21 @@
+Making and filling
+---------------------
+
+From list of dicts:
+
+```
+rows = []
+indces = []
+
+for ....
+   rows.append({'col':1,'col2':2})
+   indices.append(r'row {i}')
+   
+df = pd.DataFrame(rows, index=indices)
+
+
+```
+
 Indexing:
 
 element = table.at['a','b']
