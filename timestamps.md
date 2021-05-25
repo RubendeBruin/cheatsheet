@@ -16,3 +16,12 @@ t_from_meas_start.total_seconds()
 ```
 
 warning: do NOT use .seconds for this.
+
+From 
+- start-time and
+- array of time-difference in seconds
+to pandas:
+
+```
+t_pandas = pd.Timestamp(data_start) + pd.TimedeltaIndex(low_t*1e9)
+```
