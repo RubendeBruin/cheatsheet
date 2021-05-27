@@ -1,4 +1,4 @@
-use pandas timestamps. They seems to be the most evolved.
+Pandas timestamps seem to be the most evolved.
 
 
 ```
