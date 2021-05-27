@@ -82,3 +82,10 @@ Filtering on values
 - And when a multi-index is used for the column names:``` test[test[('GlobalForce','X')] > 0]```
 
 
+Filtering on index range (times)
+---------------------------------
+
+```start = pd.Timestamp('2021-05-23 06:55:00')
+end = pd.Timestamp('2021-05-23 07:10:00')
+section = df[(df.index>start) & (df.index<end)]
+```
