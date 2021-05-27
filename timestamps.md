@@ -28,9 +28,10 @@ t_pandas = pd.Timestamp(data_start) + pd.TimedeltaIndex(low_t*1e9)
 
 ## Matplotlib
 
-Convert to matlab dates: ```time_mpl = date2num(python time)```
+Convert to matplotlib dates: ```time_mpl = date2num(python time)```
 so from pandas to mpl do: ```time_mpl = date2num(time.to_pydatetime())```
 
+Then to format:
 
 ```
 import matplotlib.dates as mdates
