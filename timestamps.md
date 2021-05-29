@@ -37,6 +37,13 @@ unixtime = time.mktime(start.timetuple())
 tx = unixtime + ts
 ```
 
+and back
+
+```
+from datetime import datetime
+datetime.fromtimestamp(xmin)
+```
+
 ## Matplotlib
 
 Convert to matplotlib dates: ```time_mpl = date2num(python time)```
