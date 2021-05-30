@@ -26,6 +26,20 @@ to pandas:
 t_pandas = pd.Timestamp(data_start) + pd.TimedeltaIndex(low_t*1e9)
 ```
 
+### Adding date and time
+
+For datetime
+```
+import datetime
+datetime.datetime.combine(datetime.date(2011, 1, 1), 
+                          datetime.time(10, 23))
+```
+
+for pandas
+```
+t_pandas = pd.Timestamp(data_start) + pd.TimedeltaIndex(low_t*1e9)
+```
+
 ## Unix time (pyqtgraph)
 
 #We need unix-time; unix-time is seconds since 1 January 1970
