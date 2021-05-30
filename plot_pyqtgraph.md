@@ -24,3 +24,12 @@ w.show()
 notes:
 1. Add legend before adding lines
 2. Look at the example browser for more options
+
+
+### Change background color
+
+```
+## Switch to using white background and black foreground
+pg.setConfigOption('background', 'w')
+pg.setConfigOption('foreground', 'k')
+```
