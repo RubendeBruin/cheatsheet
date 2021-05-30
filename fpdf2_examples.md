@@ -61,3 +61,22 @@ for row in data:
 
 pdf.output(r'c:\data\temp\tuto2.pdf')
 ```
+
+
+## Images
+
+Full-width images in a landscape doc
+
+```
+from fpdf import FPDF
+from PIL import Image
+
+document = FPDF(orientation="landscape")
+document.add_page()
+
+for image in images:
+
+    document.image(image,w=document.epw)
+
+document.output(r'c:\data\test.pdf')
+```
