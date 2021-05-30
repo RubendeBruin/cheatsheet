@@ -69,7 +69,6 @@ Full-width images in a landscape doc
 
 ```
 from fpdf import FPDF
-from PIL import Image
 
 document = FPDF(orientation="landscape")
 document.add_page()
