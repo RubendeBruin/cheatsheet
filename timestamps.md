@@ -47,6 +47,8 @@ t_pandas = pd.Timestamp(data_start) + pd.TimedeltaIndex(low_t*1e9)
 ```
 # start : datetime.datetime(2021, 5, 25, 21, 0, 0, 83393)
 
+import time
+
 unixtime = time.mktime(start.timetuple())
 tx = unixtime + ts
 ```
