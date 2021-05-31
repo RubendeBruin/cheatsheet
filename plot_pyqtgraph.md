@@ -33,3 +33,19 @@ notes:
 pg.setConfigOption('background', 'w')
 pg.setConfigOption('foreground', 'k')
 ```
+
+### subplots with linked axes
+
+```
+lay = pg.GraphicsLayoutWidget(show=True, title="Whooo!")
+p1 = lat.addPlot(name="UpperT", title="Upper", row=1, col=1, colspan=2, axisItems={'bottom': pg.DateAxisItem()})
+p1.plot(x=x, y=y, pen='k', name='Blaat')
+
+p2 = lat.addPlot(name="UpperT", title="Upper", row=2, col=1, colspan=2, axisItems={'bottom': pg.DateAxisItem()})
+p2.plot(x=x, y=y, pen='k', name='Blaat')
+
+p2.setXLink(p1) 
+```
+
+
+
