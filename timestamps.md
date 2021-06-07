@@ -1,4 +1,4 @@
-Pandas timestamps seem to be the most evolved.
+Pandas timestamps seem to be the most evolved. They are basically compatible with numpy ns64
 
 
 ```
@@ -62,8 +62,10 @@ datetime.fromtimestamp(xmin)
 
 ## Matplotlib
 
-Convert to matplotlib dates: ```time_mpl = date2num(python time)```
-so from pandas to mpl do: ```time_mpl = date2num(time.to_pydatetime())```
+```import matplotlib.dates as dates```
+
+Convert to matplotlib dates: ```time_mpl = dates.date2num(python time)```
+so from pandas to mpl do: ```time_mpl = dates.date2num(time.to_pydatetime())```
 
 Then to format:
 
@@ -76,3 +78,24 @@ myLocator = mdates.MinuteLocator(0)           # tick where minutes = 0, so every
 ax.xaxis.set_major_formatter(myFmt)
 ax.xaxis.set_major_locator(myLocator)
 ```
+
+## Interpolating
+
+Numpy does not want to interpolate numpy or pandas datetimes. This is because it can only interpolate floats.
+This is very very stupid.
+
+The work-around is to convert the date-times to matplotlib times.
+
+```
+from matplotlib.dates import date2num
+
+t = dataframe['DATE'].values
+t = date2num(t)
+start = pd.Timestamp('2021-6-6 T 6:30')
+
+ts = date2num(t)
+np.interp(ts,t,values)
+```
+
+
+
