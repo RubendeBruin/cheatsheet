@@ -42,7 +42,7 @@ t_pandas = pd.Timestamp(data_start) + pd.TimedeltaIndex(low_t*1e9)
 
 ## Unix time (pyqtgraph)
 
-#We need unix-time; unix-time is seconds since 1 January 1970
+#We need unix-time; unix-time is **seconds** since 1 January 1970
 
 ```
 # start : datetime.datetime(2021, 5, 25, 21, 0, 0, 83393)
@@ -62,10 +62,21 @@ datetime.fromtimestamp(xmin)
 
 ## Matplotlib
 
+Matplotlib represents dates using floating point numbers specifying the number of **days** since a default epoch of 1970-01-01 UTC;
+
 ```import matplotlib.dates as dates```
 
 Convert to matplotlib dates: ```time_mpl = dates.date2num(python time)```
 so from pandas to mpl do: ```time_mpl = dates.date2num(time.to_pydatetime())```
+
+To construct from a start-time and a time-vector in seconds do:
+
+```
+import matplotlib.dates as dates
+start =  = dates.date2num(python time)
+mpl_times = start + ts / (24*60*60)
+```
+
 
 Then to format:
 
@@ -81,8 +92,7 @@ ax.xaxis.set_major_locator(myLocator)
 
 ## Interpolating
 
-Numpy does not want to interpolate numpy or pandas datetimes. This is because it can only interpolate floats.
-This is very very stupid.
+Numpy does not want to interpolate numpy or pandas datetimes. This is because it can only interpolate floats and its own time-type can not be converted to float.
 
 The work-around is to convert the date-times to matplotlib times.
 
