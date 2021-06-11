@@ -19,6 +19,8 @@ line = w.plot(tx, channels['AU'], pen=(100,100,0), name='ugly green')
 w.showGrid(x=True, y=True)
 
 w.show()
+
+keep_references.append(w) # see remark below
 ```
 
 notes:
@@ -45,7 +47,14 @@ p2 = lat.addPlot(name="UpperT", title="Upper", row=2, col=1, colspan=2, axisItem
 p2.plot(x=x, y=y, pen='k', name='Blaat')
 
 p2.setXLink(p1) 
+
+keep_references.append(lay) # see remark below
+
 ```
+
+Remark:
+
+Make sure that you keep the references to window alive. So don't overwrite/reuse. If you do then you will likely get C++ errors. 
 
 
 
