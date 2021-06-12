@@ -57,3 +57,17 @@ plotw.clear()  # clear the window
 ## 3. Debugging!
 
 The PyCharm debugger can connect to the ipython-kernel that Jupyter is running.
+
+In the notebook run
+```
+%connect_info
+```
+
+![image](https://user-images.githubusercontent.com/34062862/121765259-375a9a80-cb7c-11eb-8896-d4ac6dce1969.png)
+
+and then
+
+![image](https://user-images.githubusercontent.com/34062862/121765273-4e998800-cb7c-11eb-9c24-8b4a8bc8b14f.png)
+
+
+
