@@ -54,6 +54,10 @@ to clear
 plotw.clear()  # clear the window
 ```
 
+Make sure the keep the references to the created figures away from the garbage-collector!
+For example ```dont_throw_away.append(plotw)```
+
+
 ## 3. Debugging!
 
 The PyCharm debugger can connect to the ipython-kernel that Jupyter is running.
