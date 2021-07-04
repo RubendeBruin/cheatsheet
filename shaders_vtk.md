@@ -29,7 +29,65 @@ and documentation is here: https://vtk.org/Wiki/Shaders_In_VTK
 And for shaders see: https://learnopengl.com/Getting-started/Shaders
 
 
+Vertex shader:
 ```
+in vec4 vertexMC;
+
+// frag position in VC
+out vec4 vertexVCVSOutput;
+out vec4 vertexColorVSOutput;
+```
+
+
+so adding: 
+`vertexColorVSOutput = vec4(0,0,0,1); `
+
+to the vertex inplementation code makes all vertices black.
+
+and 
+
+`vertexColorVSOutput = vec4(vertexMC.x,vertexMC.y,vertexMC.z,1);`
+
+will use the x-coodinate in ModelCoordinates as red-component
+
+
 fragOutput0
+```
+
+Shaders summary:
+
+- in  : input for shader
+- out : output for shader
+- uniform : globals
+
+out of vertex will be linked to in of fragment if they have the same name and type
+
+Example:
+```
+vertex_dec = \
+    """
+    out vec4 my_color;
+    """
+
+vertex_impl = \
+    """
+    my_color = vec4(vertexMC.x,vertexMC.y,vertexMC.z,1);
+    """
+
+fragment_dec = \
+    """
+    in vec4 my_color;
+    """
+
+fragment_impl = \
+    """
+    fragOutput0 = my_color;
+    """
+
+shader_to_actor(box_actor, "vertex", impl_code=vertex_impl,
+                decl_code=vertex_dec, debug=False)
+
+shader_to_actor(box_actor, "fragment", block="light", impl_code=fragment_impl,
+                decl_code=fragment_dec, debug = False)
 ```
 
