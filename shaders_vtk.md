@@ -52,7 +52,7 @@ will use the x-coodinate in ModelCoordinates as red-component
 
 
 fragOutput0
-```
+
 
 Shaders summary:
 
@@ -90,4 +90,13 @@ shader_to_actor(box_actor, "vertex", impl_code=vertex_impl,
 shader_to_actor(box_actor, "fragment", block="light", impl_code=fragment_impl,
                 decl_code=fragment_dec, debug = False)
 ```
+
+
+So what about outlines?
+
+https://gamedev.stackexchange.com/questions/68401/how-can-i-draw-outlines-around-3d-models
+
+> Inflate normals for polygons that face away from the camera and paint them black
+> Nice for smooth meshes (what we need) but does not play nice with transparency
+
 
