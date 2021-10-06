@@ -9,3 +9,7 @@ QMessageBox.information(parent=self,
                                 )
                                 
 ```
+
+where parent needs to be an instance of QWidget
+
+for node-editors: self.widget
