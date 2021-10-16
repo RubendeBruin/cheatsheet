@@ -1,3 +1,19 @@
+Filling:
+
+Create an item
+
+```pyhton
+item = QTreeWidgetItem()
+item.setText(0, text)
+```
+
+Add to root-item or to other item:
+```pyhton
+treeView.invisibleRootItem().addChild(item)
+item.addchild(item)
+```
+
+
 How to get all items:
 
 ```python
