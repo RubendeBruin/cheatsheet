@@ -42,3 +42,55 @@ restore the closed-state of the items in the tree:
                 if child.childCount() > 0:
                     close_nodes(child, closed)
 ```
+
+Enabling Drag/Drop:
+
+```python
+def startDrag(self, supportedActions):
+
+dragged_index = self.ui.treeWidget.selectedItems()[0].section_index
+mimeData = QMimeData()
+mimeData.setText(str(dragged_index))
+
+drag = QDrag(self.ui.treeWidget)  # <-- this is the "source" of the event
+drag.setMimeData(mimeData)
+
+drag.exec_(supportedActions=supportedActions)
+
+def tvdragEnterEvent(self, event):
+if event.source() is self.ui.treeWidget:
+    event.accept()
+else:
+    event.setDropAction(Qt.IgnoreAction)
+
+
+def tvdragMoveEvent(self, event):
+if event.source() is self.ui.treeWidget:
+    event.accept()
+else:
+    event.setDropAction(Qt.IgnoreAction)
+
+def tvdropEvent(self, event):
+
+print('drop event')
+
+if event.source() is not self.ui.treeWidget:
+    # print("Not accepting external data")
+    event.setDropAction(Qt.IgnoreAction)
+    return
+
+dragged_index = int(event.mimeData().text())
+
+# dropped onto
+point = event.pos()
+drop_onto = self.ui.treeWidget.itemAt(point)
+
+if drop_onto is None:
+    drop_onto_name = None
+    event.setDropAction(Qt.IgnoreAction)
+    return
+else:
+    drop_onto_index = drop_onto.section_index
+
+print(f'Dropped {dragged_index} onto {drop_onto_index}')
+```
