@@ -95,3 +95,23 @@ else:
 
 print(f'Dropped {dragged_index} onto {drop_onto_index}')
 ```
+
+
+Events for selecting:
+
+Selection changed (good for single selection)
+```python
+def selection_changed(self, *args):
+    if self.ui.treeWidget.selectedItems():
+        print(f'section {self.ui.treeWidget.selectedItems()[0].section_index}')
+```
+
+otherwise:
+
+```python
+self.treeView.activated.connect(
+            self.tree_select_node
+        )  # fires when a user presses [enter]
+self.treeView.doubleClicked.connect(self.tree_select_node)
+self.treeView.itemClicked.connect(self.item_clicked)
+```
