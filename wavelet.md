@@ -30,3 +30,6 @@ Calculating the spectral density
 
 ```python
 spec = sum(ps.transpose())
+
+
+For orcaflex: make sure that the arrays have the same dims. Ofx time gives (n) while some singals give (n,1). Quick-fix: plotwavelet(t,x[:,0], dt=0.1)
