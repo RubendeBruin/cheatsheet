@@ -19,7 +19,7 @@ Option2: Dynamic (with silhouette)
 ol = vtk.vtkPolyDataSilhouette()
 ol.SetInputConnection(tr.GetOutputPort())
 ol.SetEnableFeatureAngle(True)
-ol.SetCamera(self.group.engine.camera)
+ol.SetCamera(vtk_camera)
 ol.SetBorderEdges(True)
 ```
 
