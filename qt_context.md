@@ -12,3 +12,6 @@ menu = QtWidgets.QMenu()
 menu.addAction("Edit {}".format(node_name), edit)
 
 menu.exec_(globLoc)
+
+evt:
+menu.exec_(QCursor.pos())
