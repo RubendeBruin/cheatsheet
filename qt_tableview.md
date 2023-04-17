@@ -1,6 +1,15 @@
-Example of an editable Qtreeview using a model:
+Example of an editable QTableView using a model:
 
 Based on https://www.pythonguis.com/tutorials/qtableview-modelviews-numpy-pandas/
+
+Note: values that are returned shall be a string.
+Do convert floats to a string with decimals to ensure that they are recognized as float
+
+```
+if isinstance(value, float):
+            # Render float to 2 dp
+            return "%.2f" % value
+```            
 
 ```python
 import sys
