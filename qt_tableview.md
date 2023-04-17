@@ -52,6 +52,15 @@ class TableModel(QtCore.QAbstractTableModel):
             return True
         else:
             return False
+            
+    def headerData(self, section, orientation, role):
+        # section is the index of the column/row.
+        if role == Qt.ItemDataRole.DisplayRole:
+            if orientation == Qt.Orientation.Horizontal:
+                return str(self._data.columns[section])
+
+            if orientation == Qt.Orientation.Vertical:
+                return str(self._data.index[section])
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
@@ -74,8 +83,8 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.table.selectionModel().currentChanged.connect(lambda a,b : print(f'cell changed {a}, {b}'))
 
-        self.table.verticalHeader().setVisible(False)
-        self.table.horizontalHeader().setVisible(False)
+        # self.table.verticalHeader().setVisible(False)
+        # self.table.horizontalHeader().setVisible(False)
 
 
 app=QtWidgets.QApplication(sys.argv)
