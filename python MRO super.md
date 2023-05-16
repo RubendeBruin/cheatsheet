@@ -28,3 +28,60 @@ class D(B,C):
 
 D('test')
 ```
+
+
+if multiple classes derive from ABC then insert an intermediate class:
+
+```
+from abc import ABC, abstractmethod
+
+# === define an intermediate class that strips the constructor arguments ===
+
+class myABC(ABC):
+    def __init__(self, test):
+        print("myABC")
+        super().__init__() # <-- call super without arguments
+
+
+#----
+
+
+class A(myABC):
+    def __init__(self, test):
+        print("A")
+        super().__init__(test)  # <-- We do need to call super here as we derive from ABC
+
+    @abstractmethod
+    def foo(self):
+        pass
+
+
+class B(A):
+    def __init__(self, test):
+        print("B")
+        super().__init__(test)
+
+class C(myABC):
+    def __init__(self, test):
+        print('C')
+        super().__init__(test)
+
+    @abstractmethod
+    def bar(self):
+        pass
+
+
+class D(B,C):
+    def __init__(self, test):
+        print('D')
+        super().__init__(test)
+
+    def foo(self):
+        print('foo')
+
+    def bar(self):
+        print('bar')
+
+
+D('test')
+```
