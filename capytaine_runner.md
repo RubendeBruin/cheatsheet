@@ -102,4 +102,12 @@ if __name__ == '__main__':
 
 
 
+hyd = Hyddb1.create_from_capytaine(filename=filename)
+
+hyd.plot(do_show=True)
+
+outfile = "{}.dhyd".format(filename)
+hyd.save_as(outfile)
+print(f'Saved as: {outfile}')
+
 ```python
