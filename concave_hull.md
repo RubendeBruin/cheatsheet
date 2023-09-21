@@ -10,7 +10,7 @@ There are numerous methods and packages.
 
 ## Alpha shapes
 
-Using the package `alpha_shapes`:
+Using the package `alpha_shapes`: https://pypi.org/project/alpha-shapes/
 
 ```python
 from alpha_shapes import Alpha_Shaper, plot_alpha_shape
