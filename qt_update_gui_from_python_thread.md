@@ -70,13 +70,11 @@ app.exec_()
 Or, same idea but better reusable:
 
 ```python
-"""This works
-"""
 
 from time import sleep
 
-from PySide2 import QtWidgets
-from PySide2.QtCore import Signal, Slot, QObject
+from PySide6 import QtWidgets
+from PySide6.QtCore import Signal, Slot, QObject
 
 app = QtWidgets.QApplication()
 
@@ -145,6 +143,7 @@ report2.on_feedback = com.action
 
 def terminate():
     report.terminate = True
+    report2.terminate = True
 
 button.pressed.connect(terminate)
 
@@ -152,13 +151,12 @@ button.pressed.connect(terminate)
 w.show()
 
 from threading import Thread
-new_thread = Thread(target=report.run)
+new_thread = Thread(target=report.run, daemon=True)
 new_thread.start()
 
-new_thread = Thread(target=report2.run)
+new_thread = Thread(target=report2.run, daemon=True)
 new_thread.start()
 
 
 app.exec_()
-
 ```
